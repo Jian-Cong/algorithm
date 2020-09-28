@@ -28,6 +28,7 @@ public class InsertSort {
 
     /**
      * 二分插入排序
+     * TimSort.java的二分排序
      *
      * @param nums
      */
@@ -36,11 +37,12 @@ public class InsertSort {
         for (int i = 1; i < nums.length; i++) {
             tmp = nums[i];
             int pos = position(nums, 0, i - 1, tmp);
-            int j = i;
-            while (j > pos) {
-                nums[j] = nums[j - 1];
-                j--;
-            }
+//            int j = i;
+//            while (j > pos) {
+//                nums[j] = nums[j - 1];
+//                j--;
+//            }
+            System.arraycopy(nums,pos,nums,pos+1,i-pos);
             nums[pos] = tmp;
         }
     }
@@ -64,5 +66,13 @@ public class InsertSort {
             }
         }
         return l;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {33,11,9,21,11,9,34,1};
+        insertSort(nums);
+        for(int num:nums){
+            System.out.println(num);
+        }
     }
 }
