@@ -2,6 +2,8 @@ package sort.quick;
 
 import sort.Utils;
 
+import java.io.File;
+
 /**
  * 快速排序
  *
@@ -29,5 +31,16 @@ public class QuickSort {
         }
         Utils.swap(nums, q, r);
         return q;
+    }
+
+    public static void main(String[] args) {
+
+        int[] nums = new int[8];
+        for(int i=0;i<8;i++){
+            nums[i] = (int)(Math.random()*20);
+        }
+        for(int num:nums){
+            System.out.print(num+",");
+        }
     }
 }
